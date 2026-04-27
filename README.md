@@ -16,22 +16,22 @@
 
 ## Add Config
 `config/services.php`
+  
+'razorpay' => [  
+    'key' => env('RAZORPAY_KEY'),  
+    'secret' => env('RAZORPAY_SECRET'),  
+],  
 
-'razorpay' => [
-    'key' => env('RAZORPAY_KEY'),
-    'secret' => env('RAZORPAY_SECRET'),
-],
-
-`.env`
-RAZORPAY_KEY=your_key
-RAZORPAY_SECRET=your_secret
+`.env`  
+RAZORPAY_KEY=your_key  
+RAZORPAY_SECRET=your_secret  
 
 ## Create Controller
 `php artisan make:controller PaymentController`
 
 ## Add Routes
 `routes/web.php`
-    use App\Http\Controllers\PaymentController;
+    use App\Http\Controllers\PaymentController;  
 
     Route::get('/payment', [PaymentController::class, 'index']);
     Route::post('/payment/verify', [PaymentController::class, 'verify']);
